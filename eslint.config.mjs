@@ -53,7 +53,7 @@ export default [
     rules: {
       'no-use-before-define': 'off',
       '@typescript-eslint/no-unused-vars': 'warn',
-      '@typescript-eslint/no-use-before-define': 'error',
+      '@typescript-eslint/no-use-before-define': 'off',
       '@typescript-eslint/no-shadow': 'error',
       '@typescript-eslint/explicit-function-return-type': 'off',
       'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],

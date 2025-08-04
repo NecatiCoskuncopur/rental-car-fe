@@ -51,6 +51,9 @@ const theme = {
     black: '#000000',
     white: '#FFFFFF',
     richBlack: '#010103',
+    lightGray: '#F8F8F8',
+    accentRed: '#FF4C30',
+    darkGray: '#333333',
   },
 } as const;
 

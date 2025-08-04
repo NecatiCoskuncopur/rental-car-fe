@@ -1,0 +1,50 @@
+import React, { useEffect, useState } from 'react';
+
+import styled from 'styled-components';
+
+import { Container, Logo } from '@/components';
+import theme from '@/theme';
+import Navbar from './Navbar';
+
+const { colors } = theme;
+
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <StyledHeader $scrolled={scrolled}>
+      <StyledContainer>
+        <Logo />
+        <Navbar />
+      </StyledContainer>
+    </StyledHeader>
+  );
+};
+
+export default Header;
+
+const StyledHeader = styled.header<{ $scrolled: boolean }>`
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: ${colors.lightGray};
+  box-shadow: ${({ $scrolled }) => ($scrolled ? '0px 3px 10px rgba(0, 0, 0, 0.15)' : '0px 0px 10px rgba(0, 0, 0, 0)')};
+`;
+
+const StyledContainer = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+`;
