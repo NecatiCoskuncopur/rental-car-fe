@@ -38,7 +38,7 @@ const StyledHeader = styled.header<{ $scrolled: boolean }>`
   position: sticky;
   top: 0;
   left: 0;
-  background-color: ${colors.lightGray};
+  background-color: ${colors.white};
   box-shadow: ${({ $scrolled }) => ($scrolled ? '0px 3px 10px rgba(0, 0, 0, 0.15)' : '0px 0px 10px rgba(0, 0, 0, 0)')};
 `;
 

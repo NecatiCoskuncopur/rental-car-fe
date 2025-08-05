@@ -66,6 +66,7 @@ const theme = {
     softGray: '#EAEAEA',
     ink: '#0F0F20',
     grayLight: '#F2F2F2',
+    vibrantRed: '#FF4C31',
   },
 } as const;
 
