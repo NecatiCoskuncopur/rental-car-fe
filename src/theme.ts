@@ -54,6 +54,15 @@ const theme = {
     lightGray: '#F8F8F8',
     accentRed: '#FF4C30',
     darkGray: '#333333',
+    mutedPurple: '#817F91',
+    lightNeutral: '#ECECEC',
+    slateGray: '#495057',
+    focusBlue: '#80BDFF',
+    neutralGray: '#EEEEEE',
+    gunmetal: '#333E48',
+    offWhite: '#F9F9F9',
+    coralRed: '#FF5430',
+    carbonGray: '#2D2D2D',
   },
 } as const;
 
