@@ -63,6 +63,9 @@ const theme = {
     offWhite: '#F9F9F9',
     coralRed: '#FF5430',
     carbonGray: '#2D2D2D',
+    softGray: '#EAEAEA',
+    ink: '#0F0F20',
+    grayLight: '#F2F2F2',
   },
 } as const;
 
