@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { easeOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import styled from 'styled-components';
 
+import { fadeInUp } from '@/animations';
 import { Container, Title } from '@/components';
 import { footerNavData } from '@/data';
 import theme from '@/theme';
@@ -13,18 +14,6 @@ import FooterBottom from './FooterBottom';
 import { Button, Contact, FooterTop, Links, Sub, WorkingHours } from './style';
 
 const Footer = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: easeOut,
-      },
-    },
-  };
-
   return (
     <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
       <FooterBanner />
