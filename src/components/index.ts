@@ -7,3 +7,4 @@ export { default as Logo } from './Logo';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
 export { default as TextArea } from './TextArea';
 export { default as Title } from './Title';
+export { default as WhyChooseUs } from './WhyChooseUs';
