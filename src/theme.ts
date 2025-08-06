@@ -67,6 +67,8 @@ const theme = {
     ink: '#0F0F20',
     grayLight: '#F2F2F2',
     vibrantRed: '#FF4C31',
+    veryLightGray: '#F1F1F1',
+    vibrantOrange: '#FF6E1D',
   },
 } as const;
 
