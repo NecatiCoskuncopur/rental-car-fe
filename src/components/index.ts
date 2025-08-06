@@ -1,6 +1,7 @@
 export { default as CallToActionBanner } from './CallToActionBanner';
 export { default as ContactForm } from './ContactForm';
 export { default as Container } from './Container';
+export { default as HowItWorks } from './HowItWorks';
 export { default as Input } from './Input';
 export { default as Logo } from './Logo';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
