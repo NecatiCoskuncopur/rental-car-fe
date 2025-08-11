@@ -1,7 +1,18 @@
 import React from 'react';
 
+import { CallToActionBanner, FrequentlyAskedQuestions, HowItWorks, WhyChooseUs } from '@/components';
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <HowItWorks />
+      {/* Vehicle */}
+      <CallToActionBanner />
+      <WhyChooseUs />
+      {/* Blog */}
+      <FrequentlyAskedQuestions />
+    </>
+  );
 };
 
 export default Home;
