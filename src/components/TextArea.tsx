@@ -15,7 +15,7 @@ type TextAreaProps = {
   rows?: number;
 };
 
-const { colors, typography } = theme;
+const { borderRadius, colors, typography } = theme;
 
 const TextArea: React.FC<TextAreaProps> = ({ label, name, value, onChange, placeholder, required = false, error, rows = 4 }) => {
   return (
@@ -55,10 +55,9 @@ const StyledTextArea = styled.textarea<{ $hasError: boolean }>`
   padding: 12px 15px;
   border: 1px solid ${({ $hasError }) => ($hasError ? 'red' : colors.softGray)};
   outline: none;
-  background-color: ${colors.grayLight};
   color: ${colors.black};
   resize: none;
-
+  border-radius: ${borderRadius.lg};
   &:focus {
     border-color: ${({ $hasError }) => ($hasError ? 'red' : colors.focusBlue)};
   }
@@ -66,6 +65,6 @@ const StyledTextArea = styled.textarea<{ $hasError: boolean }>`
 
 const ErrorText = styled.p`
   color: red;
-  font-size: 12px;
+  font-size: ${typography.fontSizes.$1};
   margin-top: 6px;
 `;

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import styled from 'styled-components';
 
 import theme from '@/theme';
@@ -15,14 +16,34 @@ type InputProps = {
   error?: string;
 };
 
-const { colors, typography } = theme;
+const { borderRadius, colors, typography } = theme;
+
 const Input: React.FC<InputProps> = ({ label, name, value, onChange, placeholder, required = false, type = 'text', error }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const isPasswordField = type === 'password';
+
   return (
     <InputWrapper>
       <Label>
         {label} {required && <span>*</span>}
       </Label>
-      <StyledInput id={name} name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} type={type} $hasError={!!error} />
+      <InputContainer>
+        <StyledInput
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          required={required}
+          type={isPasswordField && showPassword ? 'text' : type}
+          $hasError={!!error}
+        />
+        {isPasswordField && (
+          <IconWrapper type="button" onClick={() => setShowPassword(prev => !prev)}>
+            {showPassword ? <FiEye size={18} /> : <FiEyeOff size={18} />}
+          </IconWrapper>
+        )}
+      </InputContainer>
       {error && <ErrorText>{error}</ErrorText>}
     </InputWrapper>
   );
@@ -48,21 +69,39 @@ const Label = styled.label`
   }
 `;
 
+const InputContainer = styled.div`
+  position: relative;
+`;
+
 const StyledInput = styled.input<{ $hasError: boolean }>`
   line-height: 21px;
   width: 100%;
-  padding: 12px 15px;
+  padding: 10px 40px 10px 16px;
   border: 1px solid ${({ $hasError }) => ($hasError ? 'red' : colors.softGray)};
   outline: none;
-  background-color: ${colors.grayLight};
+  border-radius: ${borderRadius.lg};
   color: ${colors.black};
   &:focus {
     border-color: ${({ $hasError }) => ($hasError ? 'red' : colors.focusBlue)};
   }
 `;
 
+const IconWrapper = styled.button`
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: ${colors.mutedPurple};
+  cursor: pointer;
+`;
+
 const ErrorText = styled.p`
   color: red;
-  font-size: 12px;
+  font-size: ${typography.fontSizes.$1};
   margin-top: 6px;
 `;
