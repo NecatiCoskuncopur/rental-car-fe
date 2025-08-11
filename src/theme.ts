@@ -30,7 +30,7 @@ const theme = {
   },
 
   borderRadius: {
-    xs: '3ox',
+    xs: '3px',
     sm: '4px',
     md: '6px',
     lg: '8px',

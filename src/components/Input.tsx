@@ -37,6 +37,7 @@ const Input: React.FC<InputProps> = ({ label, name, value, onChange, placeholder
           required={required}
           type={isPasswordField && showPassword ? 'text' : type}
           $hasError={!!error}
+          autoComplete="new-password"
         />
         {isPasswordField && (
           <IconWrapper type="button" onClick={() => setShowPassword(prev => !prev)}>

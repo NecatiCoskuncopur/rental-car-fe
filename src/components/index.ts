@@ -1,3 +1,4 @@
+export { default as AuthWrapper } from './AuthWrapper';
 export { default as CallToActionBanner } from './CallToActionBanner';
 export { default as ContactForm } from './ContactForm';
 export { default as Container } from './Container';
