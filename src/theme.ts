@@ -69,6 +69,7 @@ const theme = {
     vibrantRed: '#FF4C31',
     veryLightGray: '#F1F1F1',
     vibrantOrange: '#FF6E1D',
+    mediumGray: '#D5D5D5',
   },
 } as const;
 

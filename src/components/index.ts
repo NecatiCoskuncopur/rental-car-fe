@@ -6,6 +6,8 @@ export { default as FrequentlyAskedQuestions } from './FrequentlyAskedQuestions'
 export { default as HowItWorks } from './HowItWorks';
 export { default as Input } from './Input';
 export { default as Logo } from './Logo';
+export { default as PostCard } from './Post/PostCard';
+export { default as PostSlide } from './Post/PostSlide';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
 export { default as TextArea } from './TextArea';
 export { default as Title } from './Title';

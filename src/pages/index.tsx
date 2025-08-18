@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CallToActionBanner, FrequentlyAskedQuestions, HowItWorks, WhyChooseUs } from '@/components';
+import { CallToActionBanner, FrequentlyAskedQuestions, HowItWorks, PostSlide, WhyChooseUs } from '@/components';
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       {/* Vehicle */}
       <CallToActionBanner />
       <WhyChooseUs />
-      {/* Blog */}
+      <PostSlide />
       <FrequentlyAskedQuestions />
     </>
   );

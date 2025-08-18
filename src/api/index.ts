@@ -2,3 +2,4 @@ export { default as getCurrentUser } from './auth/getCurrrentUser';
 export { default as login } from './auth/login';
 export { default as logout } from './auth/logout';
 export { default as register } from './auth/register';
+export { default as getPosts } from './post/getPosts';
