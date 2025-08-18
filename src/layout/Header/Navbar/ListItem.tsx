@@ -14,6 +14,9 @@ const ListItem = styled.li<{ $active: boolean }>`
     color: ${colors.accentRed};
   }
   color: ${({ $active }) => ($active ? colors.accentRed : colors.richBlack)};
+  a {
+    cursor: pointer;
+  }
 `;
 
 export default ListItem;

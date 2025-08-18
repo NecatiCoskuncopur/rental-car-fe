@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Container, Logo } from '@/components';
 import theme from '@/theme';
 import Navbar from './Navbar';
+import UserMenu from './UserMenu';
 
 const { colors } = theme;
 
@@ -25,6 +26,7 @@ const Header = () => {
       <StyledContainer>
         <Logo />
         <Navbar />
+        <UserMenu />
       </StyledContainer>
     </StyledHeader>
   );
@@ -40,6 +42,7 @@ const StyledHeader = styled.header<{ $scrolled: boolean }>`
   left: 0;
   background-color: ${colors.white};
   box-shadow: ${({ $scrolled }) => ($scrolled ? '0px 3px 10px rgba(0, 0, 0, 0.15)' : '0px 0px 10px rgba(0, 0, 0, 0)')};
+  z-index: 9999;
 `;
 
 const StyledContainer = styled(Container)`

@@ -1,12 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 import { RiCloseLargeLine } from 'react-icons/ri';
 import styled from 'styled-components';
 
+import { logout } from '@/api';
 import { Logo } from '@/components';
 import { navData } from '@/data';
+import { useCurrentUser } from '@/hooks';
 import theme from '@/theme';
 import ListItem from './ListItem';
 
@@ -16,8 +18,18 @@ type MobileNavbarProps = {
 
 const { colors } = theme;
 const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeModal }) => {
-  const pathname = usePathname();
+  const router = useRouter();
+  const pathname = router.pathname;
+  const { user } = useCurrentUser();
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      router.push('/login');
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
   return (
     <>
       <ListHeader>
@@ -32,6 +44,34 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ closeModal }) => {
             <Link href={item.href}>{item.name}</Link>
           </ListItem>
         ))}
+
+        {user ? (
+          <>
+            <ListItem $active={false}>
+              <Link href="/userDashboard"> User Dashboard</Link>
+            </ListItem>
+            {user?.isAdmin && (
+              <ListItem $active={false}>
+                <Link href="/userDashboard">Admin Dashboard</Link>
+              </ListItem>
+            )}
+            <ListItem $active={false}>
+              <Link href="/settings">Settings</Link>
+            </ListItem>
+            <ListItem $active={false}>
+              <a onClick={handleLogout}>Logout</a>
+            </ListItem>
+          </>
+        ) : (
+          <>
+            <ListItem $active={false}>
+              <Link href="/login">Login</Link>
+            </ListItem>
+            <ListItem $active={false}>
+              <Link href="/register">Register</Link>
+            </ListItem>
+          </>
+        )}
       </ul>
     </>
   );
