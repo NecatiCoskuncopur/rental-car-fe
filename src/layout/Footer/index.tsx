@@ -21,7 +21,7 @@ const Footer = () => {
         <Container>
           <FooterTop>
             <Contact>
-              <Title variant="xsmall" fontWeight={700} letterSpacing="-0.4px" lineHeight="1.2" fontFamily="Lato, sans-serif" mb="30px">
+              <Title $variant="xsmall" $fontWeight={700} $letterSpacing="-0.4px" $lineHeight="1.2" $fontFamily="Lato, sans-serif" $mb="30px">
                 Rental Car
               </Title>
               <p>Discover a wide range of rental cars to suit every need and budget.</p>
@@ -41,7 +41,7 @@ const Footer = () => {
               </ul>
             </Contact>
             <Links>
-              <Title variant="xsmall" fontWeight={700} letterSpacing="-0.4px" lineHeight="1.2" fontFamily="Lato, sans-serif" mb="30px">
+              <Title $variant="xsmall" $fontWeight={700} $letterSpacing="-0.4px" $lineHeight="1.2" $fontFamily="Lato, sans-serif" $mb="30px">
                 LINKS
               </Title>
               {footerNavData.map(item => (
@@ -51,7 +51,7 @@ const Footer = () => {
               ))}
             </Links>
             <WorkingHours>
-              <Title variant="xsmall" fontWeight={700} letterSpacing="-0.4px" lineHeight="1.2" fontFamily="Lato, sans-serif" mb="30px">
+              <Title $variant="xsmall" $fontWeight={700} $letterSpacing="-0.4px" $lineHeight="1.2" $fontFamily="Lato, sans-serif" $mb="30px">
                 WORKING HOURS
               </Title>
               <li>
@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
             </WorkingHours>
             <Sub>
-              <Title variant="xsmall" fontWeight={700} letterSpacing="-0.4px" lineHeight="1.2" fontFamily="Lato, sans-serif" mb="30px">
+              <Title $variant="xsmall" $fontWeight={700} $letterSpacing="-0.4px" $lineHeight="1.2" $fontFamily="Lato, sans-serif" $mb="30px">
                 SUBSCRIPTION
               </Title>
               <p>Subscribe your Email address for latest news & updates.</p>

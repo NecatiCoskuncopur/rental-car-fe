@@ -14,17 +14,17 @@ const HowItWorks = () => {
   return (
     <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
       <StyledContainer>
-        <Title variant="xxsmall" fontFamily="Rubik, Sans-serif" mb="8px">
+        <Title $variant="xxsmall" $fontFamily="Rubik, Sans-serif" $mb="8px">
           How It Works
         </Title>
-        <Title variant="xlarge" mb="50px">
+        <Title $variant="xlarge" $mb="50px">
           Quick & easy car rental
         </Title>
         <ul>
           <ListItem>
             <CarSelect />
             <TextWrapper>
-              <Title variant="small" mb="10px">
+              <Title $variant="small" $mb="10px">
                 Select Car
               </Title>
               <p>Choose from a wide range of high-quality vehicles tailored to suit your comfort and travel needs.</p>
@@ -33,7 +33,7 @@ const HowItWorks = () => {
           <ListItem>
             <Operator />
             <TextWrapper>
-              <Title variant="small" mb="10px">
+              <Title $variant="small" $mb="10px">
                 Contact Operator
               </Title>
               <p>Get in touch with our support team for fast assistance, booking help, or personalized recommendations.</p>
@@ -42,7 +42,7 @@ const HowItWorks = () => {
           <ListItem>
             <Drive />
             <TextWrapper>
-              <Title variant="small" mb="10px">
+              <Title $variant="small" $mb="10px">
                 Let's Drive
               </Title>
               <p>Start your journey with confidence and enjoy a seamless rental experience from pickup to return.</p>

@@ -20,11 +20,11 @@ const CallToActionBanner = () => {
       <FlexContainer>
         <TextWrapper>
           {isMobile ? (
-            <Title variant="large" mb="10px">
+            <Title $variant="large" $mb="10px">
               Save big with our cheap car rental!
             </Title>
           ) : (
-            <Title variant="xxlarge" lineHeight="62px" letterSpacing="-1.36px" mb="10px">
+            <Title $variant="xxlarge" $lineHeight="62px" $letterSpacing="-1.36px" $mb="10px">
               Save big with our cheap car rental!
             </Title>
           )}

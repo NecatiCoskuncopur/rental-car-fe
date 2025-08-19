@@ -28,10 +28,10 @@ const WhyChooseUs = () => {
     <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
       <FlexContainer>
         <TextWrapper>
-          <Title variant="xxsmall" fontFamily="Rubik, Sans-serif" mb="8px">
+          <Title $variant="xxsmall" $fontFamily="Rubik, Sans-serif" $mb="8px">
             Why Choose Us
           </Title>
-          <Title variant="xlarge" lineHeight="52px" mb="25px">
+          <Title $variant="xlarge" $lineHeight="52px" $mb="25px">
             Best valued deals you will ever find
           </Title>
           <p>
@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
           <ListItem>
             <CrossCountry />
             <div>
-              <Title variant="xsmall" mb="10px">
+              <Title $variant="xsmall" $mb="10px">
                 Cross Country Drive
               </Title>
               <p> Experience freedom on the open road with seamless cross-country travel options tailored for long-distance comfort and reliability.</p>
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
           <ListItem>
             <Price />
             <div>
-              <Title variant="xsmall" mb="10px">
+              <Title $variant="xsmall" $mb="10px">
                 All inclusive pricing
               </Title>
               <p> Enjoy transparent pricing with no surprises—insurance, taxes, and service fees are all included for your convenience.</p>
@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
           <ListItem>
             <Charge />
             <div>
-              <Title variant="xsmall" mb="10px">
+              <Title $variant="xsmall" $mb="10px">
                 No hidden charges
               </Title>
               <p> What you see is what you pay. Our clear pricing ensures peace of mind without any unexpected costs at checkout.</p>

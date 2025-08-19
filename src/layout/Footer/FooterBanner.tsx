@@ -20,7 +20,7 @@ const FooterBanner = () => {
     <HomeWrapper $backgroundUrl={homeBanner}>
       <Container>
         <HomeContent>
-          <Title variant="xlarge" lineHeight="52px" mb="25px">
+          <Title $variant="xlarge" $lineHeight="52px" $mb="25px">
             Download our app to get most out of it
           </Title>
           <p>
@@ -38,7 +38,7 @@ const FooterBanner = () => {
     <PageWrapper $backgroundUrl={pageBanner}>
       <Container>
         <PageContent>
-          <Title variant="large" lineHeight="48px" letterSpacing="-0.72px">
+          <Title $variant="large" $lineHeight="48px" $letterSpacing="-0.72px">
             Book a car by getting in touch with us
           </Title>
           <Number>
@@ -46,7 +46,7 @@ const FooterBanner = () => {
               <FaPhoneAlt size={14} />
               <span>Call to book</span>
             </p>
-            <Title variant="large" lineHeight="43px" letterSpacing="-0.56px" fontFamily="Rubik, Sans-serif">
+            <Title $variant="large" $lineHeight="43px" $letterSpacing="-0.56px" $fontFamily="Rubik, Sans-serif">
               (123) 498-4600
             </Title>
           </Number>

@@ -14,7 +14,7 @@ const Contact = () => {
       <FormWrapper>
         <Info>
           <TextWrapper>
-            <Title variant="xlarge" lineHeight="52px" mb="25px">
+            <Title $variant="xlarge" $lineHeight="52px" $mb="25px">
               Need additional information?
             </Title>
             <p>

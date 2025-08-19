@@ -23,7 +23,7 @@ const PostCard: React.FC<PostCardProps> = ({ post, type }) => {
 
       <Content>
         <Link href={`/blog/${post.slug}`}>
-          <Title variant="xsmall" mb="12px">
+          <Title $variant="xsmall" $mb="12px">
             {post.title}
           </Title>
         </Link>

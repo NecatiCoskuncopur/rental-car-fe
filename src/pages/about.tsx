@@ -22,10 +22,10 @@ const About = () => {
           </ImageWrapper>
 
           <ContentWrapper>
-            <Title variant="xxsmall" fontFamily="Rubik, Sans-serif" mb="8px">
+            <Title $variant="xxsmall" $fontFamily="Rubik, Sans-serif" $mb="8px">
               About Company
             </Title>
-            <Title variant="xlarge" lineHeight="52px" mb="30px">
+            <Title $variant="xlarge" $lineHeight="52px" $mb="30px">
               You start the engine and your adventure begins
             </Title>
             <p>

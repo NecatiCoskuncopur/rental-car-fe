@@ -49,24 +49,24 @@ const titleVariants = {
 export type TitleVariant = keyof typeof titleVariants;
 
 type TitleProps = {
-  variant: TitleVariant;
-  fontSize?: string;
-  fontWeight?: number;
-  lineHeight?: string;
-  fontFamily?: string;
-  letterSpacing?: string;
-  mt?: string;
-  mb?: string;
+  $variant: TitleVariant;
+  $fontSize?: string;
+  $fontWeight?: number;
+  $lineHeight?: string;
+  $fontFamily?: string;
+  $letterSpacing?: string;
+  $mt?: string;
+  $mb?: string;
 };
 
 const Title = styled.h1<TitleProps>`
-  font-family: ${({ fontFamily }) => fontFamily || 'Poppins, sans-serif'};
-  font-size: ${({ fontSize, variant }) => fontSize || titleVariants[variant].fontSize};
-  font-weight: ${({ fontWeight, variant }) => fontWeight ?? titleVariants[variant].fontWeight};
-  line-height: ${({ lineHeight, variant }) => lineHeight || titleVariants[variant].lineHeight};
-  letter-spacing: ${({ letterSpacing, variant }) => letterSpacing || titleVariants[variant].letterSpacing};
-  margin-top: ${({ mt }) => mt || 0};
-  margin-bottom: ${({ mb }) => mb || 0};
+  font-family: ${({ $fontFamily }) => $fontFamily || 'Poppins, sans-serif'};
+  font-size: ${({ $fontSize, $variant }) => $fontSize || titleVariants[$variant].fontSize};
+  font-weight: ${({ $fontWeight, $variant }) => $fontWeight ?? titleVariants[$variant].fontWeight};
+  line-height: ${({ $lineHeight, $variant }) => $lineHeight || titleVariants[$variant].lineHeight};
+  letter-spacing: ${({ $letterSpacing, $variant }) => $letterSpacing || titleVariants[$variant].letterSpacing};
+  margin-top: ${({ $mt }) => $mt || 0};
+  margin-bottom: ${({ $mb }) => $mb || 0};
 `;
 
 export default Title;

@@ -27,7 +27,7 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children, handleSubmit, loadi
       <Container>
         <ImageWrapper $backgroundUrl={imageUrl}>
           <Overlay />
-          <Title variant="xxsmall" mb="8px" mt="16px">
+          <Title $variant="xxsmall" $mb="8px" $mt="16px">
             {pathname === '/login' ? 'Welcome Back !' : 'Register Account'}
           </Title>
           <p>{pathname === '/login' ? ' Login to continue to Rental Car.' : '  Get your free Rental Car account now.'}</p>

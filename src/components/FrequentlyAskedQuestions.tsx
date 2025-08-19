@@ -22,10 +22,10 @@ const FrequentlyAskedQuestions = () => {
   return (
     <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
       <StyledContainer>
-        <Title variant="xxsmall" fontFamily="Rubik, sans-serif" mb="8px">
+        <Title $variant="xxsmall" $fontFamily="Rubik, sans-serif" $mb="8px">
           FAQ
         </Title>
-        <Title variant="xlarge" lineHeight="52px" mb="30px">
+        <Title $variant="xlarge" $lineHeight="52px" $mb="30px">
           Frequently Asked Questions
         </Title>
 
