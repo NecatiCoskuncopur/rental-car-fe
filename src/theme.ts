@@ -72,6 +72,7 @@ const theme = {
     mediumGray: '#D5D5D5',
     blackGray: '#111111',
     bgLighter: '#F2F7F6',
+    successGreen: '#1FBC2F',
   },
 } as const;
 

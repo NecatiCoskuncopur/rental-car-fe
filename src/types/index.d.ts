@@ -55,3 +55,8 @@ interface IUserBookingData extends IPaginationMeta {
   bookings: IUserBooking[];
   totalBookings: number;
 }
+
+interface IUpdateBookingPayload {
+  bookingId: string;
+  status: 'confirmed' | 'cancelled';
+}
