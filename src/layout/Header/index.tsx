@@ -42,7 +42,7 @@ const StyledHeader = styled.header<{ $scrolled: boolean }>`
   left: 0;
   background-color: ${colors.white};
   box-shadow: ${({ $scrolled }) => ($scrolled ? '0px 3px 10px rgba(0, 0, 0, 0.15)' : '0px 0px 10px rgba(0, 0, 0, 0)')};
-  z-index: 9999;
+  z-index: 99;
 `;
 
 const StyledContainer = styled(Container)`

@@ -119,7 +119,7 @@ const DropdownMenu = styled.ul`
   border-radius: ${borderRadius.sm};
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 10;
   padding: 8px 0;
   list-style: none;
 `;
