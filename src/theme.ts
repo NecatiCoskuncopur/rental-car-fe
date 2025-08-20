@@ -70,6 +70,7 @@ const theme = {
     veryLightGray: '#F1F1F1',
     vibrantOrange: '#FF6E1D',
     mediumGray: '#D5D5D5',
+    blackGray: '#111111',
   },
 } as const;
 
