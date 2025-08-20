@@ -9,6 +9,8 @@ export { default as Input } from './Input';
 export { default as Logo } from './Logo';
 export { default as OverlayLoader } from './OverlayLoader';
 export { default as PostCard } from './Post/PostCard';
+export { default as PostDetailContent } from './Post/PostDetailContent';
+export { default as PostDetailFooter } from './Post/PostDetailFooter';
 export { default as PostSlide } from './Post/PostSlide';
 export { default as TopArticle } from './Post/TopArticle';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
