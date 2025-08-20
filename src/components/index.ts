@@ -16,4 +16,5 @@ export { default as TopArticle } from './Post/TopArticle';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
 export { default as TextArea } from './TextArea';
 export { default as Title } from './Title';
+export { default as UserDashboardHeader } from './UserDashboardHeader';
 export { default as WhyChooseUs } from './WhyChooseUs';

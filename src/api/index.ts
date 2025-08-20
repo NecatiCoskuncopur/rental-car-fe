@@ -6,3 +6,4 @@ export { default as getAdjacentPosts } from './post/getAdjacentPosts';
 export { default as getPostBySlug } from './post/getPostBySlug';
 export { default as getPosts } from './post/getPosts';
 export { default as getSlugs } from './post/getSlugs';
+export { default as getUserBookings } from './user/getUserBookings';

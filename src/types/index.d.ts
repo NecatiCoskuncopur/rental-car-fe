@@ -41,3 +41,17 @@ interface IPostData extends IPaginationMeta {
   posts: IPost[];
   totalPosts: number;
 }
+
+interface IUserBooking {
+  _id: string;
+  startDate: string;
+  endDate: string;
+  status: string;
+  totalPrice: number;
+  vehicle: IVehicle;
+}
+
+interface IUserBookingData extends IPaginationMeta {
+  bookings: IUserBooking[];
+  totalBookings: number;
+}

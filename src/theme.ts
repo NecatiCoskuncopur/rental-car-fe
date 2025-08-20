@@ -71,6 +71,7 @@ const theme = {
     vibrantOrange: '#FF6E1D',
     mediumGray: '#D5D5D5',
     blackGray: '#111111',
+    bgLighter: '#F2F7F6',
   },
 } as const;
 
