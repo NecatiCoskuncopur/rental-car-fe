@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import { Modal, Table, Typography } from 'antd';
@@ -8,13 +8,15 @@ import styled from 'styled-components';
 
 import { getUserBookings } from '@/api';
 import updateBooking from '@/api/booking/updateBooking';
-import { Container, Error, getUserBookingsColumns, OverlayLoader, UserBookingDetail, UserDashboardHeader } from '@/components';
+import { Error, getUserBookingsColumns, OverlayLoader, ProfileLayout, Title, UserBookingDetail } from '@/components';
 import { useFetchData, useUpdateData } from '@/hooks';
+import theme from '@/theme';
 
+const { borderRadius, colors } = theme;
 const UserBookings = () => {
   const router = useRouter();
   const page = parseInt(router.query.page as string) || 1;
-  const pageSize = 10;
+  const pageSize = 6;
 
   const [selectedBooking, setSelectedBooking] = React.useState<IUserBooking | null>(null);
   const [actionType, setActionType] = React.useState<'view' | 'cancel' | null>(null);
@@ -61,8 +63,19 @@ const UserBookings = () => {
   };
 
   const handlePageChange = (newPage: number) => {
-    router.push(`/userBookings?page=${newPage}`);
+    router.push(
+      {
+        pathname: '/profile/userBookings',
+        query: { page: newPage },
+      },
+      undefined,
+      { shallow: true },
+    );
   };
+
+  useEffect(() => {
+    refetch();
+  }, [router.query.page]);
 
   if (bookingError) return <Error />;
 
@@ -83,14 +96,16 @@ const UserBookings = () => {
   );
 
   return (
-    <>
-      <UserDashboardHeader />
+    <ProfileLayout title="Bookings">
       {loading ? (
         <LoaderWrapper>
           <OverlayLoader variant="table" />
         </LoaderWrapper>
       ) : (
-        <StyledContainer>
+        <Card>
+          <Title $variant="xxsmall" $mb="24px">
+            Bookings
+          </Title>
           <Table
             columns={columns}
             dataSource={dataSource}
@@ -121,18 +136,24 @@ const UserBookings = () => {
           <Modal open={!!selectedBooking && actionType === 'view'} onCancel={closeModal} footer={null} width={800}>
             <UserBookingDetail data={selectedBooking} />
           </Modal>
-        </StyledContainer>
+        </Card>
       )}
-    </>
+    </ProfileLayout>
   );
 };
 
-const StyledContainer = styled(Container)`
+const LoaderWrapper = styled.div`
   padding: 90px 16px;
 `;
 
-const LoaderWrapper = styled.div`
-  padding: 90px 16px;
+const Card = styled.div`
+  padding: 32px;
+  border-radius: ${borderRadius.md};
+  box-shadow:
+    0 0 2px 0 rgba(145, 158, 171, 0.3),
+    0 12px 24px -4px rgba(145, 158, 171, 0.12);
+  background-color: ${colors.white};
+  width: 100%;
 `;
 
 export default UserBookings;

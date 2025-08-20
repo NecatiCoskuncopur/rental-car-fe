@@ -1,3 +1,4 @@
+export { default as AppleStore } from './AppleStore';
 export { default as Book } from './Book';
 export { default as Booking } from './Booking';
 export { default as CarSelect } from './CarSelect';
@@ -6,6 +7,7 @@ export { default as CrossCountry } from './CrossCountry';
 export { default as Dashboard } from './Dashboard';
 export { default as Drive } from './Drive';
 export { default as Expenses } from './Expenses';
+export { default as GooglePlay } from './GooglePlay';
 export { default as Operator } from './Operator';
 export { default as Outlets } from './Outlets';
 export { default as Parking } from './Parking';
