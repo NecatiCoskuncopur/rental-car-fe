@@ -34,15 +34,15 @@ const UserMenu = () => {
             {user.name} <FaAngleDown />
           </UserName>
           <DropdownMenu>
-            <DropdownItem as={Link} href="/userDashboard">
-              User Dashboard
+            <DropdownItem as={Link} href="/profile">
+              Profile
             </DropdownItem>
             {user.isAdmin && (
               <DropdownItem as={Link} href="/adminDashboard">
                 Admin Dashboard
               </DropdownItem>
             )}
-            <DropdownItem as={Link} href="/settings">
+            <DropdownItem as={Link} href="/profile/settings">
               Settings
             </DropdownItem>
             <DropdownItem as="button" onClick={handleLogout}>
