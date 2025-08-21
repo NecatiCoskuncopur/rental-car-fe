@@ -2,7 +2,7 @@ interface IUser {
   _id: string;
   name: string;
   surname: string;
-  dateofBirth: string;
+  dateOfBirth: string;
   email: string;
   isAdmin: boolean;
   createdAt: string;
@@ -59,4 +59,14 @@ interface IUserBookingData extends IPaginationMeta {
 interface IUpdateBookingPayload {
   bookingId: string;
   status: 'confirmed' | 'cancelled';
+}
+
+interface IUpdateUserPayload {
+  userId: string;
+  name?: string;
+  surname?: string;
+  dateOfBirth?: Date;
+  email: string;
+  password?: string;
+  oldPassword?: string;
 }

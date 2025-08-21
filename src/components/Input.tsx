@@ -58,11 +58,12 @@ const InputWrapper = styled.div`
 
 const Label = styled.label`
   display: block;
-  color: ${colors.ink};
+  color: ${colors.mutedPurple};
   font-weight: ${typography.fontWeights.medium};
   line-height: 19px;
+  font-size: ${typography.fontSizes.$2};
   letter-spacing: -0.64px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   margin-bottom: 5px;
   span {
     color: red;
