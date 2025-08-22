@@ -73,6 +73,10 @@ const theme = {
     blackGray: '#111111',
     bgLighter: '#F2F7F6',
     successGreen: '#1FBC2F',
+    lightSteel: '#E5EAEF',
+    vibrantBlue: '#5D87FF',
+    mutedBlueGray: '#5A6A85',
+    lightIndigo: '#ECF2FF',
   },
 } as const;
 

@@ -1,3 +1,4 @@
+export { default as AdminLayout } from './Admin/AdminLayout';
 export { default as AuthWrapper } from './AuthWrapper';
 export { default as CallToActionBanner } from './CallToActionBanner';
 export { default as getUserBookingsColumns } from './Columns/getUserBookingsColumns';
