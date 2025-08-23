@@ -70,3 +70,40 @@ interface IUpdateUserPayload {
   password?: string;
   oldPassword?: string;
 }
+
+interface IIncome {
+  _id: string;
+  totalIncome: number;
+}
+
+interface ITopUsers {
+  _id: string;
+  bookingCount: number;
+  userId: string;
+  fullName: string;
+}
+
+interface IMostBookedVehicle {
+  _id: string;
+  bookingCount: number;
+  vehicleId: string;
+  brand: string;
+  model: string;
+  image: string;
+}
+
+interface INewUserStatsResponse {
+  range: 'day' | 'week' | 'month';
+  from: string;
+  to: string;
+  newUsers: number;
+}
+
+interface IMostBookedVehicle {
+  _id: string;
+  bookingCount: number;
+  vehicleId: string;
+  brand: string;
+  model: string;
+  image: string;
+}
