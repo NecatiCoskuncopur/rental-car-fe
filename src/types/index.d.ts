@@ -10,6 +10,11 @@ interface IUser {
   __v: number;
 }
 
+interface IUserData extends IPaginationMeta {
+  users: IUser[];
+  totalUsers: number;
+}
+
 interface IPaginationData {
   page?: string;
   limit?: string;

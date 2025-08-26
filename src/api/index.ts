@@ -13,5 +13,7 @@ export { default as getNewUserStats } from './summary/getNewUserStats';
 export { default as getTopUsers } from './summary/getTopUsers';
 export { default as getVehicleAvailability } from './summary/getVehicleAvailability';
 export { default as getYearlyIncome } from './summary/getYearlyIncome';
+export { default as deleteUser } from './user/deleteUser';
 export { default as getUserBookings } from './user/getUserBookings';
+export { default as getUsers } from './user/getUsers';
 export { default as updateUser } from './user/updateUser';
