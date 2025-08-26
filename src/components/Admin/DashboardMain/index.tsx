@@ -1,0 +1,76 @@
+import React from 'react';
+
+import { ColumnsType } from 'antd/es/table';
+
+import { getTopUsers } from '@/api';
+import { useFetchData } from '@/hooks';
+import MonthlyIncome from './MonthlyIncome';
+import MostBookedBy from './MostBookedBy';
+import MostBookedVehicle from './MostBookedVehicle';
+import NewUserStats from './NewUserStats';
+import { Row, Wrapper } from './styles';
+import TableSection from './TableSection';
+import VehicleSummary from './VehicleSummary';
+import YearlyIncome from './YearlyIncome';
+
+const DashboardMain = () => {
+  const { data: topUsers, loading: topUsersLoading, error: topUsersError } = useFetchData<ITopUsers[]>(() => getTopUsers());
+
+  const userColumnns: ColumnsType<ITopUsers> = [
+    {
+      title: 'User ID',
+      dataIndex: 'userId',
+      key: 'userId',
+    },
+    {
+      title: 'Full Name',
+      key: 'fullName',
+      render: record => record.fullName,
+    },
+    {
+      title: 'Booking Count',
+      dataIndex: 'bookingCount',
+    },
+  ];
+
+  return (
+    <>
+      <Row>
+        <Wrapper $variant="md">
+          <MonthlyIncome />
+        </Wrapper>
+        <Wrapper $variant="sm">
+          <YearlyIncome />
+        </Wrapper>
+      </Row>
+      <Row>
+        <Wrapper $variant="sm">
+          <NewUserStats />
+        </Wrapper>
+        <Wrapper $variant="md">
+          <TableSection
+            title="Top Users"
+            href="/adminDashboard/users"
+            error={topUsersError}
+            loading={topUsersLoading}
+            data={topUsers || []}
+            columns={userColumnns}
+          />
+        </Wrapper>
+      </Row>
+      <Row>
+        <Wrapper $variant="md">
+          <MostBookedVehicle />
+        </Wrapper>
+        <Wrapper $variant="sm">
+          <MostBookedBy />
+        </Wrapper>
+      </Row>
+      <Row>
+        <VehicleSummary />
+      </Row>
+    </>
+  );
+};
+
+export default DashboardMain;

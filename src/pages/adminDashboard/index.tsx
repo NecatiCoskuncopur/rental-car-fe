@@ -1,9 +1,13 @@
 import React from 'react';
 
-import { AdminLayout } from '@/components';
+import { AdminLayout, DashboardMain } from '@/components';
 
 const AdminDashboard = () => {
-  return <AdminLayout>AdminDashboard</AdminLayout>;
+  return (
+    <AdminLayout>
+      <DashboardMain />
+    </AdminLayout>
+  );
 };
 
 export default AdminDashboard;

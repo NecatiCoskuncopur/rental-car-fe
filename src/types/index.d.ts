@@ -99,11 +99,13 @@ interface INewUserStatsResponse {
   newUsers: number;
 }
 
-interface IMostBookedVehicle {
+interface IMostBookedItem {
   _id: string;
   bookingCount: number;
-  vehicleId: string;
-  brand: string;
-  model: string;
-  image: string;
+}
+
+interface IVehicleAvailability {
+  totalVehicles: number;
+  rentedVehiclesToday: number;
+  availableVehiclesToday: number;
 }
