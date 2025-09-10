@@ -66,7 +66,7 @@ const Label = styled.label`
   padding-bottom: 5px;
   margin-bottom: 5px;
   span {
-    ${colors.red};
+    color: ${colors.red};
     margin-left: 2px;
   }
 `;
@@ -103,7 +103,7 @@ const IconWrapper = styled.button`
 `;
 
 const ErrorText = styled.p`
-  ${colors.red};
+  color: ${colors.red};
   font-size: ${typography.fontSizes.$1};
   margin-top: 6px;
 `;
