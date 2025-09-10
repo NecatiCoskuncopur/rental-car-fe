@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import theme from './theme';
-
 const GlobalStyles = createGlobalStyle`
   * {
     padding: 0;
@@ -10,7 +8,6 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     text-decoration: none;
     box-sizing: border-box;
-        color: ${theme.colors.richBlack}
   }
 
   body {
