@@ -59,7 +59,7 @@ const variantStyles = {
 };
 type Variant = keyof typeof variantStyles;
 
-const Button = styled.button<{ $variant?: Variant; $mt?: string; $mb?: string }>`
+const Button = styled.button<{ $variant?: Variant; $mt?: string; $mb?: string; $width?: string }>`
   font-weight: ${typography.fontWeights.medium};
   border-radius: ${borderRadius.xs};
   color: ${colors.white};
@@ -71,7 +71,7 @@ const Button = styled.button<{ $variant?: Variant; $mt?: string; $mb?: string }>
   cursor: pointer;
   margin-top: ${({ $mt }) => $mt || 0};
   margin-bottom: ${({ $mb }) => $mb || 0};
-  width: 100%;
+  width: ${({ $width }) => $width || 'unset'};
   ${props => variantStyles[props.$variant || 'primary']}
 `;
 

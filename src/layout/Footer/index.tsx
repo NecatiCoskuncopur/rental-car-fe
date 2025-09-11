@@ -73,7 +73,7 @@ const Footer = () => {
               </Title>
               <p>Subscribe your Email address for latest news & updates.</p>
               <input type="email" placeholder="Enter Email Address" />
-              <Button $variant="secondary" $mt="10px">
+              <Button $variant="secondary" $mt="10px" $width="100%">
                 Submit
               </Button>
             </Sub>

@@ -61,7 +61,7 @@ const variantStyles = {
 type Variant = keyof typeof variantStyles;
 
 const Title = styled.h1<{ $variant?: Variant; $mt?: string; $mb?: string }>`
-  font-family: 'Poppins, sans-serif';
+  font-family: 'Poppins', sans-serif;
   margin-top: ${({ $mt }) => $mt || 0};
   margin-bottom: ${({ $mb }) => $mb || 0};
   ${props => variantStyles[props.$variant || 'xxsmall']}
