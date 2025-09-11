@@ -40,3 +40,11 @@ interface IPostData extends IPaginationMeta {
   posts: IPost[];
   totalPosts: number;
 }
+
+interface IVehicleSearchFilter {
+  vehicleType?: string;
+  transmissionType?: string;
+  fuelType?: string;
+  startDate: string;
+  endDate: string;
+}

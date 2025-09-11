@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { FaCheckCircle } from 'react-icons/fa';
 import styled from 'styled-components';
 
-import { Button, Container, Title } from '@/components';
+import { Button, Container, Title, VehicleSearch } from '@/components';
 import theme from '@/theme';
 
 const { colors, device } = theme;
 
 const Hero = () => {
+  const vehicleSearchRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScrollToSearch = () => {
+    vehicleSearchRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -27,13 +33,16 @@ const Hero = () => {
               Save big with our car rental
             </Title>
             <p>To contribute to positive change and achieve our sustainability goals with many extraordinary</p>
-            <Button $variant="gradientLarge">
+            <Button onClick={handleScrollToSearch} $variant="gradientLarge">
               Book Ride
               <FaCheckCircle />
             </Button>
           </TextWrapper>
         </Container>
       </Content>
+      <div ref={vehicleSearchRef}>
+        <VehicleSearch />
+      </div>
     </Wrapper>
   );
 };

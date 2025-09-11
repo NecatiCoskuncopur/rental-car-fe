@@ -24,7 +24,7 @@ const variantStyles = {
     line-height: 22px;
     letter-spacing: -0.44px;
     background: linear-gradient(-36deg, ${colors.accentRed} 0, ${colors.brightOrange} 100%);
-    padding: 15px;
+    padding: 15px 0;
     &:hover {
       background: linear-gradient(36deg, ${colors.accentRed} 0, ${colors.brightOrange} 100%);
     }
