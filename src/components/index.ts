@@ -1,5 +1,6 @@
 export { default as AuthWrapper } from './AuthWrapper';
 export { default as Button } from './Button';
+export { default as CallToActionBanner } from './CallToActionBanner';
 export { default as Container } from './Container';
 export { default as HowItWorks } from './HowItWorks';
 export { default as Input } from './Input';
