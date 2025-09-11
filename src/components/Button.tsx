@@ -59,16 +59,19 @@ const variantStyles = {
 };
 type Variant = keyof typeof variantStyles;
 
-const Button = styled.button<{ $variant?: Variant }>`
+const Button = styled.button<{ $variant?: Variant; $mt?: string; $mb?: string }>`
   font-weight: ${typography.fontWeights.medium};
   border-radius: ${borderRadius.xs};
   color: ${colors.white};
   box-shadow: 0px 10px 15px 0px rgba(255, 83, 48, 0.35);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   cursor: pointer;
-
+  margin-top: ${({ $mt }) => $mt || 0};
+  margin-bottom: ${({ $mb }) => $mb || 0};
+  width: 100%;
   ${props => variantStyles[props.$variant || 'primary']}
 `;
 
