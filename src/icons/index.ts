@@ -3,4 +3,7 @@ export { default as Charge } from './Charge';
 export { default as CrossCountry } from './CrossCountry';
 export { default as Drive } from './Drive';
 export { default as Operator } from './Operator';
+export { default as Outlets } from './Outlets';
+export { default as Parking } from './Parking';
 export { default as Price } from './Price';
+export { default as Transportation } from './Transportation';
