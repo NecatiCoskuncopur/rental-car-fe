@@ -5,4 +5,5 @@ export { default as register } from './auth/register';
 export { default as getPostBySlug } from './post/getPostBySlug';
 export { default as getPosts } from './post/getPosts';
 export { default as getSlugs } from './post/getSlugs';
+export { default as getUserBookings } from './user/getUserBookings';
 export { default as getVehicles } from './vehicle/getVehicles';

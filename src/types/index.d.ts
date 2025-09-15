@@ -78,3 +78,19 @@ interface IVehiclePaginationQueryParams extends IPaginationQueryParams {
   fuelType?: 'gasoline' | 'diesel' | 'electric' | 'hybrid';
   transmissionType?: 'automatic' | 'manual';
 }
+
+interface IUserBooking {
+  _id: string;
+  startDate: string;
+  endDate: string;
+  status: string;
+  totalPrice: number;
+  vehicle: IVehicle;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface IUserBookingData extends IPaginationMeta {
+  bookings: IUserBooking[];
+  totalBookings: number;
+}
