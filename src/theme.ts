@@ -57,6 +57,7 @@ const theme = {
     coralRed: '#FF5430',
     darkBurgundy: '#922919',
     darkGray: '#333333',
+    extraLightBlueGray: '#F6F9FC',
     fireOrange: '#F0561D',
     focusBlue: '#80BDFF',
     gunmetal: '#333E48',
