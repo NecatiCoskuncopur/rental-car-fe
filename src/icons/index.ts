@@ -1,9 +1,14 @@
+export { default as Car } from './Car';
 export { default as CarSelect } from './CarSelect';
 export { default as Charge } from './Charge';
 export { default as CrossCountry } from './CrossCountry';
+export { default as Door } from './Door';
 export { default as Drive } from './Drive';
+export { default as Fuel } from './Fuel';
 export { default as Operator } from './Operator';
 export { default as Outlets } from './Outlets';
 export { default as Parking } from './Parking';
+export { default as Passenger } from './Passenger';
 export { default as Price } from './Price';
+export { default as Transmission } from './Transmission';
 export { default as Transportation } from './Transportation';

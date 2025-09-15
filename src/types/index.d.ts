@@ -48,3 +48,33 @@ interface IVehicleSearchFilter {
   startDate: string;
   endDate: string;
 }
+
+interface IVehicle {
+  _id: string;
+  brand: string;
+  model: string;
+  price: number;
+  image: string;
+  vehicleType: string;
+  doors: number;
+  passengers: number;
+  transmissionType: string;
+  fuelType: string;
+  plateNumber: string;
+  isAvailable: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface IVehicleData extends IPaginationMeta {
+  vehicles: IVehicle[];
+  totalVehicles: number;
+}
+
+interface IVehiclePaginationQueryParams extends IPaginationQueryParams {
+  startDate?: string;
+  endDate?: string;
+  vehicleType?: 'sedan' | 'suv' | 'hatchback' | 'station vagon' | 'mpv';
+  fuelType?: 'gasoline' | 'diesel' | 'electric' | 'hybrid';
+  transmissionType?: 'automatic' | 'manual';
+}
