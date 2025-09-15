@@ -85,7 +85,7 @@ interface IUserBooking {
   endDate: string;
   status: string;
   totalPrice: number;
-  vehicle: IVehicle;
+  vehicleId: IVehicle;
   createdAt: string;
   updatedAt: string;
 }
@@ -103,4 +103,9 @@ interface IUpdateUserPayload {
   email: string;
   password?: string;
   oldPassword?: string;
+}
+
+interface IUpdateBookingPayload {
+  bookingId: string;
+  status: 'confirmed' | 'cancelled';
 }

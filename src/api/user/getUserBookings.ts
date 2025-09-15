@@ -11,7 +11,7 @@ const getUserBookings = async (pagination?: IPaginationQueryParams) => {
     });
   }
 
-  const response = await api.get(`/user/getUserBookings${params.toString()}`);
+  const response = await api.get(`/user/getUserBookings?${params.toString()}`);
   return response.data;
 };
 

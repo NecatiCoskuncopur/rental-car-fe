@@ -14,8 +14,6 @@ type InformationProps = {
 
 const { borderRadius, colors, device, typography } = theme;
 const Information: React.FC<InformationProps> = ({ user }) => {
-  console.log(user);
-
   return (
     <List>
       <Card>

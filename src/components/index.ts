@@ -1,6 +1,7 @@
 export { default as AuthWrapper } from './AuthWrapper';
 export { default as Button } from './Button';
 export { default as CallToActionBanner } from './CallToActionBanner';
+export { default as UserBookingColumns } from './Columns/UserBookingColumns';
 export { default as ContactForm } from './ContactForm';
 export { default as Container } from './Container';
 export { default as Error } from './Error';
@@ -19,6 +20,7 @@ export { default as SummaryList } from './Profile/SummaryList';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
 export { default as TextArea } from './TextArea';
 export { default as Title } from './Title';
+export { default as UserBookingDetail } from './UserBookingDetail';
 export { default as VehicleCard } from './Vehicle/VehicleCard';
 export { default as VehicleFilter } from './Vehicle/VehicleFilter';
 export { default as VehicleSearch } from './VehicleSearch';
