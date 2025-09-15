@@ -94,3 +94,13 @@ interface IUserBookingData extends IPaginationMeta {
   bookings: IUserBooking[];
   totalBookings: number;
 }
+
+interface IUpdateUserPayload {
+  userId: string;
+  name?: string;
+  surname?: string;
+  dateOfBirth?: Date;
+  email: string;
+  password?: string;
+  oldPassword?: string;
+}
