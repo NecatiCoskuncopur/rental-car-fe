@@ -1,3 +1,5 @@
+export { default as AdminLayout } from './Admin/AdminLayout';
+export { default as DashboardMain } from './Admin/DashboardMain';
 export { default as AuthWrapper } from './AuthWrapper';
 export { default as Button } from './Button';
 export { default as CallToActionBanner } from './CallToActionBanner';

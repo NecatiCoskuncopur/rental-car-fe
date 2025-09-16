@@ -109,3 +109,30 @@ interface IUpdateBookingPayload {
   bookingId: string;
   status: 'confirmed' | 'cancelled';
 }
+
+interface IIncome {
+  _id: string;
+  totalIncome: number;
+}
+
+interface IVehicleAvailability {
+  totalVehicles: number;
+  rentedVehiclesToday: number;
+  availableVehiclesToday: number;
+}
+
+interface IMostBookedVehicle {
+  _id: string;
+  bookingCount: number;
+  vehicleId: string;
+  brand: string;
+  model: string;
+  image: string;
+}
+
+interface ITopUsers {
+  _id: string;
+  bookingCount: number;
+  userId: string;
+  fullName: string;
+}
