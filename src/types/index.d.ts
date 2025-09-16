@@ -152,3 +152,24 @@ interface IUserData extends IPaginationMeta {
   users: IUser[];
   totalUsers: number;
 }
+
+interface IBookingPaginationQueryParams extends IPaginationQueryParams {
+  status?: 'pending' | 'confirmed' | 'cancelled';
+}
+
+interface IBooking {
+  _id: string;
+  endDate: string;
+  startDate: string;
+  status?: 'pending' | 'confirmed' | 'cancelled';
+  totalPrice: number;
+  updatedAt: string;
+  createdAt: string;
+  userId: IUser;
+  vehicleId: IVehicle;
+}
+
+interface IBookingData extends IPaginationMeta {
+  bookings: IBooking[];
+  totalBookings: number;
+}
