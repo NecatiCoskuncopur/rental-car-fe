@@ -1,9 +1,12 @@
 export { default as AdminLayout } from './Admin/AdminLayout';
 export { default as DashboardMain } from './Admin/DashboardMain';
+export { default as DeleteModal } from './Admin/DeleteModal';
+export { default as TableWrapper } from './Admin/TableWrapper';
 export { default as AuthWrapper } from './AuthWrapper';
 export { default as Button } from './Button';
 export { default as CallToActionBanner } from './CallToActionBanner';
 export { default as UserBookingColumns } from './Columns/UserBookingColumns';
+export { default as UserColumns } from './Columns/UserColumns';
 export { default as ContactForm } from './ContactForm';
 export { default as Container } from './Container';
 export { default as Error } from './Error';
