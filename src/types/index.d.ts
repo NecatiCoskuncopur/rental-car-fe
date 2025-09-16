@@ -173,3 +173,10 @@ interface IBookingData extends IPaginationMeta {
   bookings: IBooking[];
   totalBookings: number;
 }
+
+interface IUpdatePostPayload {
+  postId: string;
+  title?: string;
+  content?: string;
+  image?: string;
+}
