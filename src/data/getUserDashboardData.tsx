@@ -15,7 +15,7 @@ const getUserDashboardData = ({ totalBookings, totalSpent, totalApprovedSpent }:
     iconBg: colors.focusBlue,
     value: totalBookings,
     footerText: 'View All Bookings',
-    href: '/userBookings',
+    href: 'profile/userBookings',
   },
   {
     title: 'Total Transactions',
@@ -23,7 +23,7 @@ const getUserDashboardData = ({ totalBookings, totalSpent, totalApprovedSpent }:
     iconBg: colors.vibrantOrange,
     value: `$${new Intl.NumberFormat().format(totalSpent)}`,
     footerText: 'View all Transactions',
-    href: '/',
+    href: 'profile/userBookings',
   },
   {
     title: 'Verified Expenses',
@@ -31,7 +31,7 @@ const getUserDashboardData = ({ totalBookings, totalSpent, totalApprovedSpent }:
     iconBg: colors.coralRed,
     value: `$${new Intl.NumberFormat().format(totalApprovedSpent)}`,
     footerText: 'View all Expenses',
-    href: '/',
+    href: 'profile/userBookings',
   },
 ];
 

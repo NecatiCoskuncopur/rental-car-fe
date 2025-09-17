@@ -6,8 +6,7 @@ import { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
-import { getUserBookings } from '@/api';
-import updateBooking from '@/api/booking/updateBooking';
+import { getUserBookings, updateBooking } from '@/api';
 import { Error, OverlayLoader, ProfileLayout, Title, UserBookingColumns, UserBookingDetail } from '@/components';
 import { useFetchData, useUpdateData } from '@/hooks';
 import theme from '@/theme';

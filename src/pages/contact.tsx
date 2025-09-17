@@ -63,7 +63,7 @@ const FormWrapper = styled(Container)`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 110px 0 90px;
+  padding: 110px 16px 90px;
 `;
 
 const Info = styled.div`
