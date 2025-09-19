@@ -180,3 +180,5 @@ interface IUpdatePostPayload {
   content?: string;
   image?: string;
 }
+
+type GenericErrors = Record<string, string[] | string>;

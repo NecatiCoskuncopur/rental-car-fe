@@ -5,11 +5,16 @@ import { AxiosError, AxiosResponse } from 'axios';
 interface CreateState<T> {
   data: T | null;
   loading: boolean;
-  error: string | null;
+  error: GenericErrors | null;
   success: boolean;
 }
 
-const useCreateData = <T = unknown, V = unknown>(requestFn: (payload: V) => Promise<AxiosResponse<T>>, defaultPayload?: V) => {
+interface AxiosErrorResponse {
+  errors?: GenericErrors;
+  message?: string | string[];
+}
+
+const useCreateData = <T = unknown, V = unknown>(requestFn: (payload: V) => Promise<AxiosResponse<T, AxiosErrorResponse>>, defaultPayload?: V) => {
   const [state, setState] = useState<CreateState<T>>({
     data: null,
     loading: false,
@@ -25,16 +30,26 @@ const useCreateData = <T = unknown, V = unknown>(requestFn: (payload: V) => Prom
       setState({ data: response.data, loading: false, error: null, success: true });
       return response.data;
     } catch (error) {
-      let message = 'Something went wrong';
+      let parsedError: GenericErrors = { general: 'Something went wrong' };
 
-      if ((error as AxiosError).isAxiosError) {
-        const axiosError = error as AxiosError<{ message?: string }>;
-        message = axiosError.response?.data?.message || axiosError.message;
+      if ((error as AxiosError<AxiosErrorResponse>).isAxiosError) {
+        const axiosError = error as AxiosError<AxiosErrorResponse>;
+        const data = axiosError.response?.data;
+
+        if (data) {
+          if (data.errors) {
+            parsedError = data.errors;
+          } else if (data.message) {
+            parsedError = { general: Array.isArray(data.message) ? data.message.join(', ') : data.message };
+          }
+        } else {
+          parsedError = { general: axiosError.message };
+        }
       } else if (error instanceof Error) {
-        message = error.message;
+        parsedError = { general: error.message };
       }
 
-      setState({ data: null, loading: false, error: message, success: false });
+      setState({ data: null, loading: false, error: parsedError, success: false });
       throw error;
     }
   };
