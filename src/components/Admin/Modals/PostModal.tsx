@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { UploadOutlined } from '@ant-design/icons';
-import { Button, Form, Input, message, Modal, Progress, Upload } from 'antd';
+import { Form, message, Modal } from 'antd';
 import type { UploadFile } from 'antd/es/upload/interface';
 import { nanoid } from 'nanoid';
 
-import { StyledQuill } from '@/components';
+import { postFormFields } from '@/data';
 import { useUploadImage } from '@/hooks';
 
 interface PostFormValues {
@@ -82,19 +81,10 @@ const PostModal: React.FC<PostModalProps> = ({ mode, initialValues, onSubmit, is
   };
 
   const handleFinish = (values: { title: string }) => {
-    if (!imageUrl) {
-      message.error('Please upload an image first');
-      return;
-    }
-    if (!content || content === '<p><br></p>') {
-      message.error('Content cannot be empty');
-      return;
-    }
-
     onSubmit({
       title: values.title,
       content,
-      image: imageUrl,
+      image: imageUrl!,
     });
 
     if (mode === 'create') {
@@ -104,26 +94,23 @@ const PostModal: React.FC<PostModalProps> = ({ mode, initialValues, onSubmit, is
       setContent('');
     }
   };
-
+  const fields = postFormFields({
+    content,
+    setContent,
+    fileList,
+    handleBeforeUpload,
+    handleRemove,
+    isUploading,
+    uploadProgress,
+  });
   return (
     <Modal open={isOpen} onCancel={handleCancel} okText={mode === 'create' ? 'Create Post' : 'Update Post'} onOk={() => form.submit()}>
       <Form form={form} layout="vertical" onFinish={handleFinish}>
-        <Form.Item label="Title" name="title" rules={[{ required: true, message: 'Please input the title!' }]}>
-          <Input placeholder="Enter title" />
-        </Form.Item>
-
-        <Form.Item label="Content" required>
-          <StyledQuill value={content} onChange={setContent} theme="snow" />
-        </Form.Item>
-
-        <Form.Item label="Image" required>
-          <Upload listType="picture" fileList={fileList} beforeUpload={handleBeforeUpload} onRemove={handleRemove}>
-            <Button icon={<UploadOutlined />} loading={isUploading}>
-              {isUploading ? `Uploading... ${uploadProgress}%` : 'Select Image'}
-            </Button>
-          </Upload>
-          {isUploading && <Progress percent={uploadProgress} size="small" style={{ marginTop: 8 }} />}
-        </Form.Item>
+        {fields.map(field => (
+          <Form.Item key={field.key} name={field.name} label={field.label} rules={field.rules}>
+            {field.component}
+          </Form.Item>
+        ))}
       </Form>
     </Modal>
   );
