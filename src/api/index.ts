@@ -2,6 +2,7 @@ export { default as getCurrentUser } from './auth/getCurrentUser';
 export { default as login } from './auth/login';
 export { default as logout } from './auth/logout';
 export { default as register } from './auth/register';
+export { default as createBooking } from './booking/createBooking';
 export { default as getBookings } from './booking/getBookings';
 export { default as updateBooking } from './booking/updateBooking';
 export { default as createPost } from './post/createPost';

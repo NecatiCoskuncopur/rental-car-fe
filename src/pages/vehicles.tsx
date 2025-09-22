@@ -99,7 +99,7 @@ const Vehicles = () => {
                 <div onClick={resetFilters}>Clear Filter</div>
               </Result>
             ) : (
-              data?.vehicles.map(vehicle => <VehicleCard key={vehicle._id} vehicle={vehicle} startDate={startDate} endDate={endDate} />)
+              data?.vehicles.map(vehicle => <VehicleCard key={vehicle._id} vehicle={vehicle} startDate={filters.startDate} endDate={filters.endDate} />)
             )}
           </List>
         )}

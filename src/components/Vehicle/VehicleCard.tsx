@@ -1,22 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
+import { Modal } from 'antd';
 import { FaCheckCircle } from 'react-icons/fa';
 import styled from 'styled-components';
 
 import { vehicleDetailsData } from '@/data';
+import { useCurrentUser } from '@/hooks';
 import theme from '@/theme';
+import BookingModal from '../BookingModal';
 import Button from '../Button';
 import Title from '../Title';
 
 type VehicleCardProps = {
   vehicle: IVehicle;
-  startDate?: string | string[];
-  endDate?: string | string[];
+  startDate: string | string[];
+  endDate: string | string[];
 };
 
 const { borderRadius, colors, device, typography } = theme;
 const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, startDate, endDate }) => {
+  const router = useRouter();
+  const { user } = useCurrentUser();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleOpen = () => setModalIsOpen(true);
+  const handleClose = () => setModalIsOpen(false);
+
+  const handleLoginRedirect = () => {
+    handleClose();
+    router.push('/login');
+  };
+
+  useEffect(() => {
+    if (modalIsOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [modalIsOpen]);
+
   return (
     <Wrapper>
       <StyledImageWrapper>
@@ -37,11 +65,21 @@ const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, startDate, endDate }
         ))}
       </DetailWrapper>
       <ButtonWrapper>
-        {/* Booking Sonrası Modal */}
-        <Button $variant="gradientLarge">
+        <Button $variant="gradientLarge" onClick={handleOpen}>
           Book Ride <FaCheckCircle />
         </Button>
       </ButtonWrapper>
+      {modalIsOpen && user && <BookingModal handleClose={handleClose} vehicle={vehicle} startDate={startDate} endDate={endDate} />}
+      {!user && (
+        <Modal
+          title="You need to log in to make a reservation."
+          open={modalIsOpen}
+          onOk={handleLoginRedirect}
+          onCancel={handleClose}
+          okText="Login"
+          cancelText="Cancel"
+        />
+      )}
     </Wrapper>
   );
 };

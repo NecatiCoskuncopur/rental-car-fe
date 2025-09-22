@@ -6,6 +6,7 @@ export { default as PostModal } from './Admin/Modals/PostModal';
 export { default as VehicleModal } from './Admin/Modals/VehicleModal';
 export { default as TableWrapper } from './Admin/TableWrapper';
 export { default as AuthWrapper } from './AuthWrapper';
+export { default as Modal } from './BookingModal';
 export { default as Button } from './Button';
 export { default as CallToActionBanner } from './CallToActionBanner';
 export { default as BookingColumns } from './Columns/BookingColumns';
