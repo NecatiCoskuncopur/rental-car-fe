@@ -55,12 +55,12 @@ interface IVehicle {
   model: string;
   price: number;
   image: string;
-  vehicleType: string;
+  vehicleType: VehicleType;
   doors: number;
   passengers: number;
-  transmissionType: string;
-  fuelType: string;
-  plateNumber: string;
+  transmissionType: TransmissionType;
+  fuelType: FuelType;
+  plateNumbers: string[];
   isAvailable: boolean;
   createdAt: string;
   updatedAt: string;

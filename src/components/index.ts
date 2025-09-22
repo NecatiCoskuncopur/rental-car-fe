@@ -3,6 +3,7 @@ export { default as BookingDetail } from './Admin/BookingDetail';
 export { default as DashboardMain } from './Admin/DashboardMain';
 export { default as DeleteModal } from './Admin/DeleteModal';
 export { default as PostModal } from './Admin/Modals/PostModal';
+export { default as VehicleModal } from './Admin/Modals/VehicleModal';
 export { default as TableWrapper } from './Admin/TableWrapper';
 export { default as AuthWrapper } from './AuthWrapper';
 export { default as Button } from './Button';

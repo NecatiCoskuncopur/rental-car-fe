@@ -1,5 +1,6 @@
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Input, Progress, Upload, UploadFile } from 'antd';
+import { RuleObject } from 'antd/es/form';
 
 import { StyledQuill } from '@/components';
 
@@ -35,7 +36,7 @@ const postFormFields = ({ content, setContent, fileList, handleBeforeUpload, han
     component: <StyledQuill value={content} onChange={setContent} theme="snow" />,
     rules: [
       {
-        validator: async (_, value: string) => {
+        validator: async (_: RuleObject, value: string) => {
           const plainText = value ? value.replace(/<(.|\n)*?>/g, '').trim() : '';
 
           if (!plainText) {

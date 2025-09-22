@@ -2,6 +2,7 @@ export { default as adminNavData } from './adminNavData';
 export { default as faqData } from './faqData';
 export { default as footerNavData } from './footerNavData';
 export { default as postFormFields } from './forms/postFormFields';
+export { default as vehicleFormFields } from './forms/vehicleFormFields';
 export { default as getUserDashboardData } from './getUserDashboardData';
 export { default as navData } from './navData';
 export { default as vehicleDetailsData } from './vehicleDetailsData';
