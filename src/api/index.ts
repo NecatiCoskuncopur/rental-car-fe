@@ -20,4 +20,7 @@ export { default as deleteUser } from './user/deleteUser';
 export { default as getUserBookings } from './user/getUserBookings';
 export { default as getUsers } from './user/getUsers';
 export { default as updateUser } from './user/updateUser';
+export { default as createVehicle } from './vehicle/createVehicle';
+export { default as deleteVehicle } from './vehicle/deleteVehicle';
 export { default as getVehicles } from './vehicle/getVehicles';
+export { default as updateVehicle } from './vehicle/updateVehicle';

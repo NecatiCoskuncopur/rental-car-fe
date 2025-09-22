@@ -11,6 +11,7 @@ export { default as BookingColumns } from './Columns/BookingColumns';
 export { default as PostColumns } from './Columns/PostColumns';
 export { default as UserBookingColumns } from './Columns/UserBookingColumns';
 export { default as UserColumns } from './Columns/UserColumns';
+export { default as VehicleColumns } from './Columns/VehicleColumns';
 export { default as ContactForm } from './ContactForm';
 export { default as Container } from './Container';
 export { default as Error } from './Error';

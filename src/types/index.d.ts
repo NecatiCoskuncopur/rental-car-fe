@@ -182,3 +182,50 @@ interface IUpdatePostPayload {
 }
 
 type GenericErrors = Record<string, string[] | string>;
+
+enum FuelType {
+  Gasoline = 'gasoline',
+  Diesel = 'diesel',
+  Electric = 'electric',
+  Hybrid = 'hybrid',
+}
+
+enum TransmissionType {
+  Automatic = 'automatic',
+  Manual = 'manual',
+}
+
+enum VehicleType {
+  Sedan = 'sedan',
+  SUV = 'suv',
+  Hatchback = 'hatchback',
+  StationVagon = 'station vagon',
+  MPV = 'mpv',
+}
+
+interface ICreateVehiclePayload {
+  brand: string;
+  model: string;
+  image: string;
+  price: number;
+  vehicleType: VehicleType;
+  doors: number;
+  passengers: number;
+  transmissionType: TransmissionType;
+  fuelType: FuelType;
+  plateNumbers: string[];
+}
+
+interface IUpdateVehiclePayload {
+  vehicleId: string;
+  brand?: string;
+  model?: string;
+  image?: string;
+  price?: number;
+  vehicleType?: VehicleType;
+  doors?: number;
+  passengers?: number;
+  transmissionType?: TransmissionType;
+  fuelType?: FuelType;
+  plateNumbers?: string[];
+}
