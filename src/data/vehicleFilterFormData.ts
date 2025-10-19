@@ -8,7 +8,7 @@ const vehicleFilterFormData: FormItem[] = [
   {
     id: 'vehicleType',
     label: 'Vehicle Type',
-    options: ['sedan', 'suv', 'van', 'station vagon', 'mpv', 'hatchback'],
+    options: ['sedan', 'suv', 'station vagon', 'mpv', 'hatchback'],
   },
   {
     id: 'fuelType',
