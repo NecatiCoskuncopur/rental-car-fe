@@ -1,20 +1,23 @@
 import React from 'react';
-import { GetStaticPaths, GetStaticPropsContext } from 'next';
+import { GetServerSideProps } from 'next';
 
 import styled from 'styled-components';
 
-import { getPostBySlug, getPosts, getSlugs } from '@/api';
+import { getPostBySlug, getPosts } from '@/api';
 import { Container, Error, PostDetailContent, TopArticle } from '@/components';
 import theme from '@/theme';
 
 interface BlogDetailProps {
-  post: IPost;
+  post: IPost | null;
   posts: IPost[];
 }
 
 const { device } = theme;
+
 const BlogDetail = ({ post, posts }: BlogDetailProps) => {
-  if (!post || !posts) return <Error />;
+  if (!post) {
+    return <Error />;
+  }
 
   return (
     <Container>
@@ -32,27 +35,19 @@ const BlogDetail = ({ post, posts }: BlogDetailProps) => {
 
 export default BlogDetail;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs: string[] = await getSlugs();
-
-  const paths = slugs.map(slug => ({ params: { slug } }));
-
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-};
-
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export const getServerSideProps: GetServerSideProps = async context => {
   const slug = context.params?.slug;
 
-  if (typeof slug !== 'string') return { notFound: true };
+  if (typeof slug !== 'string') {
+    return { notFound: true };
+  }
 
   try {
-    const post = await getPostBySlug(slug);
-    const postsData = await getPosts();
+    const [post, postsData] = await Promise.all([getPostBySlug(slug), getPosts()]);
 
-    if (!post) return { notFound: true };
+    if (!post) {
+      return { notFound: true };
+    }
 
     return {
       props: {
@@ -60,8 +55,12 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
         posts: postsData?.posts || [],
       },
     };
-  } catch {
-    return { notFound: true };
+  } catch (error) {
+    console.error('Blog slug SSR error:', error);
+
+    return {
+      notFound: true,
+    };
   }
 };
 
