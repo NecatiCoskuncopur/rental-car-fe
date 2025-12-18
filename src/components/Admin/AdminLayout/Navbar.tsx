@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
+import { Logo } from '@/components';
 import theme from '@/theme';
 
 type NavbarProps = {
@@ -23,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, isMenuOpen, closeModal }) => 
   return (
     <>
       <Container>
-        Logo
+        <Logo />
         <ul>
           {navItems.map(item => (
             <ListItem $isActive={item.href === pathname} key={item.key}>
@@ -47,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, isMenuOpen, closeModal }) => 
               e.stopPropagation();
             }}
           >
-            Logo
+            <Logo />
             <ul>
               {navItems.map(item => (
                 <ListItem $isActive={item.href === pathname} key={item.key}>

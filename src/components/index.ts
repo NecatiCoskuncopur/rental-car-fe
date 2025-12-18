@@ -20,6 +20,7 @@ export { default as Error } from './Error';
 export { default as FrequentlyAskedQuestions } from './FrequentlyAskedQuestions';
 export { default as HowItWorks } from './HowItWorks';
 export { default as Input } from './Input';
+export { default as Logo } from './Logo';
 export { default as OverlayLoader } from './OverlayLoader';
 export { default as PostCard } from './Post/PostCard';
 export { default as PostDetailContent } from './Post/PostDetailContent';

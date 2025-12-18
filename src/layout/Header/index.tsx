@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 
 import styled from 'styled-components';
 
-import { Container } from '@/components';
+import { Container, Logo } from '@/components';
 import theme from '@/theme';
 import Hero from './Hero';
 import Navbar from './Navbar';
@@ -28,7 +28,7 @@ const Header = () => {
       {pathname === '/' && <Hero />}
       <StyledHeader $isHomePage={pathname === '/'} $scrolled={scrolled}>
         <StyledContainer>
-          Logo
+          <Logo />
           <Navbar />
           <UserMenu />
         </StyledContainer>
