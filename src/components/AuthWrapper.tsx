@@ -20,7 +20,6 @@ const AuthWrapper: React.FC<AuthWrapperProps> = ({ children, handleSubmit, loadi
   const imageUrl = process.env.NEXT_PUBLIC_AUTH_BG_IMAGE_URL as string;
   return (
     <Wrapper>
-      <LogoWrapper>logo</LogoWrapper>
       <Container>
         <ImageWrapper $backgroundUrl={imageUrl}>
           <Overlay />
@@ -66,12 +65,6 @@ const Wrapper = styled.section`
   gap: 48px;
   padding: 0 16px;
   position: relative;
-`;
-
-const LogoWrapper = styled.div`
-  position: absolute;
-  top: 24px;
-  left: 24px;
 `;
 
 const Container = styled.div`
