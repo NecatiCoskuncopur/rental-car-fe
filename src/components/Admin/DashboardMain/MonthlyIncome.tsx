@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Alert, Select, Spin } from 'antd';
+import { Alert, Empty, Select, Spin } from 'antd';
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 import { getMonthlyIncome } from '@/api';
@@ -49,14 +49,18 @@ const MonthlyIncome = () => {
         <Title $variant="xsmall">Monthly Income</Title>
         <Select value={selectedYear} onChange={handleYearChange} options={uniqueYears.map(year => ({ value: year, label: year }))} />
       </Header>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={chartData} margin={{ top: 20, right: 30, left: 30, bottom: 50 }}>
-          <XAxis dataKey="month" angle={-45} textAnchor="end" dy={10} />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="Income" fill={theme.colors.focusBlue} radius={[5, 5, 0, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+      {monthlyIncome ? (
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={chartData} margin={{ top: 20, right: 30, left: 30, bottom: 50 }}>
+            <XAxis dataKey="month" angle={-45} textAnchor="end" dy={10} />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="Income" fill={theme.colors.focusBlue} radius={[5, 5, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      ) : (
+        <Empty />
+      )}
     </>
   );
 };

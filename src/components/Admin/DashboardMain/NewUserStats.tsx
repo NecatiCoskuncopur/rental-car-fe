@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert, Spin } from 'antd';
+import { Alert, Empty, Spin } from 'antd';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 
 import { getNewUserStats } from '@/api';
@@ -34,27 +34,31 @@ const NewUserStats = () => {
       <Title $variant="xsmall" $mb="16px">
         New Users
       </Title>
-      <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
-          <Pie
-            data={data}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            innerRadius={60}
-            paddingAngle={5}
-            label={({ name, value }) => `${name}: ${value}`}
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-          <Tooltip formatter={(value: number) => value.toLocaleString()} />
-          <Legend verticalAlign="bottom" height={36} />
-        </PieChart>
-      </ResponsiveContainer>
+      {data ? (
+        <ResponsiveContainer width="100%" height={300}>
+          <PieChart>
+            <Pie
+              data={data}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={100}
+              innerRadius={60}
+              paddingAngle={5}
+              label={({ name, value }) => `${name}: ${value}`}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip formatter={(value: number) => value.toLocaleString()} />
+            <Legend verticalAlign="bottom" height={36} />
+          </PieChart>
+        </ResponsiveContainer>
+      ) : (
+        <Empty />
+      )}
     </>
   );
 };

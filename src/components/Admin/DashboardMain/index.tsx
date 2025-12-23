@@ -36,7 +36,7 @@ const DashboardMain = () => {
 
   return (
     <>
-      {/* <Row>
+      <Row>
         <Wrapper $variant="md">
           <MonthlyIncome />
         </Wrapper>
@@ -57,8 +57,7 @@ const DashboardMain = () => {
           <MostBookedVehicle />
         </Wrapper>
         <VehicleSummary />
-      </Row> */}
-      test
+      </Row>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert, Spin } from 'antd';
+import { Alert, Empty, Spin } from 'antd';
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import styled from 'styled-components';
 
@@ -44,24 +44,30 @@ const YearlyIncome = () => {
       <Header>
         <h1>Yearly Income</h1>
       </Header>
-      <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
-          <Pie data={chartData} cx="50%" cy="50%" innerRadius={70} outerRadius={100} paddingAngle={5} dataKey="value">
-            {chartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Pie>
-          <Tooltip formatter={valueFormatter} />
-        </PieChart>
-      </ResponsiveContainer>
+      {yearlyIncome ? (
+        <>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie data={chartData} cx="50%" cy="50%" innerRadius={70} outerRadius={100} paddingAngle={5} dataKey="value">
+                {chartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip formatter={valueFormatter} />
+            </PieChart>
+          </ResponsiveContainer>
 
-      <TagsContainer>
-        {chartData.map(entry => (
-          <Tag key={entry.name} color={entry.color}>
-            {entry.name}
-          </Tag>
-        ))}
-      </TagsContainer>
+          <TagsContainer>
+            {chartData.map(entry => (
+              <Tag key={entry.name} color={entry.color}>
+                {entry.name}
+              </Tag>
+            ))}
+          </TagsContainer>
+        </>
+      ) : (
+        <Empty />
+      )}
     </>
   );
 };

@@ -18,16 +18,16 @@ const VehicleSummary = () => {
     <Wrapper>
       <TextWrapper>
         <span>Total Vehicles: </span>
-        {summaryData?.totalVehicles}
+        {summaryData ? summaryData.totalVehicles : 'No Data'}
       </TextWrapper>
 
       <TextWrapper>
-        <span>Rented Vehicles: </span> {summaryData?.rentedVehiclesToday}
+        <span>Rented Vehicles: </span> {summaryData ? summaryData.rentedVehiclesToday : 'No Data'}
       </TextWrapper>
 
       <TextWrapper>
         <span> Available Vehicles:</span>
-        {summaryData?.availableVehiclesToday}
+        {summaryData ? summaryData.availableVehiclesToday : 'No Data'}
       </TextWrapper>
     </Wrapper>
   );

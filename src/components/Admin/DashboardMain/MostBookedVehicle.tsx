@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert, Image, Spin } from 'antd';
+import { Alert, Empty, Image, Spin } from 'antd';
 import styled from 'styled-components';
 
 import { getMostBookedVehicle } from '@/api';
@@ -20,25 +20,29 @@ const MostBookedVehicle = () => {
       <Title $variant="xsmall" $mb="16px">
         Most Booked Vehicle
       </Title>
-      <Container>
-        <ImageWrapper>
-          <Image src={data?.image} alt={`${data?.brand} ${data?.model}`} height={200} style={{ objectFit: 'contain' }} />
-        </ImageWrapper>
-        <TextWrapper>
-          <p>
-            <span>Brand:</span>
-            {data?.brand.toUpperCase()}
-          </p>
-          <p>
-            <span>Model:</span>
-            {data?.model.toUpperCase()}
-          </p>
-          <p>
-            <span>BookingCount:</span>
-            {data?.bookingCount}
-          </p>
-        </TextWrapper>
-      </Container>
+      {data ? (
+        <Container>
+          <ImageWrapper>
+            <Image src={data?.image} alt={`${data?.brand} ${data?.model}`} height={200} style={{ objectFit: 'contain' }} />
+          </ImageWrapper>
+          <TextWrapper>
+            <p>
+              <span>Brand:</span>
+              {data?.brand.toUpperCase()}
+            </p>
+            <p>
+              <span>Model:</span>
+              {data?.model.toUpperCase()}
+            </p>
+            <p>
+              <span>BookingCount:</span>
+              {data?.bookingCount}
+            </p>
+          </TextWrapper>
+        </Container>
+      ) : (
+        <Empty />
+      )}
     </>
   );
 };
