@@ -28,11 +28,11 @@ const MostBookedVehicle = () => {
           <TextWrapper>
             <p>
               <span>Brand:</span>
-              {data?.brand.toUpperCase()}
+              {data?.brand?.toUpperCase() ?? '-'}
             </p>
             <p>
               <span>Model:</span>
-              {data?.model.toUpperCase()}
+              {data?.model?.toUpperCase() ?? '-'}
             </p>
             <p>
               <span>BookingCount:</span>
