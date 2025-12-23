@@ -25,8 +25,8 @@ const DashboardMain = () => {
     },
     {
       title: 'Full Name',
+      dataIndex: 'fullName',
       key: 'fullName',
-      render: record => record.fullName,
     },
     {
       title: 'Booking Count',
